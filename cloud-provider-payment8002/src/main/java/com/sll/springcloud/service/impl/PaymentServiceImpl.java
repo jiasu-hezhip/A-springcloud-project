@@ -1,0 +1,21 @@
+package com.sll.springcloud.service.impl;
+
+import com.sll.springcloud.dao.PaymentDao;
+import com.sll.springcloud.entities.Payment;
+import com.sll.springcloud.service.PaymentService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+
+@Service
+public class PaymentServiceImpl implements PaymentService {
+    @Resource
+    private PaymentDao paymentDao;
+
+    public int create(Payment payment){
+        return paymentDao.create(payment);
+    }
+    public Payment getPaymentById(Long id){
+        return paymentDao.getPaymentById(id);
+    }
+}
